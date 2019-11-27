@@ -3,11 +3,11 @@ export class Snowflake {
     /* TODO REQUIRED - Make this work. The snowflakes should drift slowly downward. 
     I have implemented only the draw() method.
      * You can base the rest of the behavior after bubbles, with only a few changes. */
-    private x: number;
-    private y: number;
-    private size: number;
-    private xSpeed: number = random(-8, 12);
-    private ySpeed: number = random(1, 5);
+    private x: number = 10;
+    private y: number = 10;
+    private size: number = 10;
+    private xSpeed: number = random(0, 0);
+    private ySpeed: number = random(0, 2);
     private stopped: boolean = false;
     private color: string = "red";
     private borderColor: string = "yellow";

@@ -8,7 +8,7 @@
     TODO REQUIRED. If they are all fixed, the program should run with 10 red balls, 10 white snowflakes, and
     10 transluscent bubbles.
 
-    Your SECONDARY goal is to implement the optional TODO requirements and any other fun things you think of.
+    Your SECONDARY goal is to impleme21nt the optional TODO requirements and any other fun things you think of.
 
     Part 2 - Documenting
     ------------------------
@@ -36,26 +36,48 @@ function setup() {
     let numBubbles = 10;
     let numBalls = 10;
     let numFlakes = 10;
+
     createCanvas(500, 500);
-    for (/* TODO REQUIRED - fill this in*/) {
+    for (let i = 0; i < numBalls; i++) {
         balls[i] = new Ball(random(25, width - 25), random(25, height - 25), random(10, 50));
-        /* TODO OPTIONAL - make the balls a random color */
     }
-    for (/* TODO REQUIRED  - fill this in*/) {
-        /* TODO REQUIRED - add the bubbles */
+    /* TODO REQUIRED - add the bubbles */
+    for (let i = 0; i < numBubbles; i++) {
+        bubbles.push(new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50)));
     }
-    for (/* TODO REQUIRED */) {
-        /* TODO REQUIRED - add the snowflakes */
+    for (let i = 0; i < numFlakes; i++) {
+        snowflakes.push(new Snowflake(random(25, width - 25), random(25, height - 25), random(10, 50)));
+    }
+    for (let i = 0; i < numBubbles; i++) {
+        bubbles[i] = new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50));
+    }
+    for (let i = 0; i < numFlakes; i++) {
     }
 }
-
 function draw() {
     background("skyblue");
-    for (/* TODO REQUIRED*/) {
+    for (let i = 0; i < balls.length; i++) {
         balls[i].draw();
         balls[i].move();
     }
+    for (let i = 0; i < bubbles.length; i++) {
+        bubbles[i].draw();
+        bubbles[i].move();
+    }
+    for (let i = 0; i < snowflakes.length; i++) {
+        snowflakes[i].draw();
+        snowflakes[i].move();
+    }
+
     /* TODO REQUIRED - Draw and move the bubbles and flakes */
+    // for (let i = 0; i < bubbles length; i++) {
+    //     bubbles[i].draw();
+    //     bubbles[i].move();
+    // }
+    // for (let i = 0; i < snowflakes.length; i++) {
+    //     snowflakes[i].draw();
+    //     snowflakes[i].move();
+    // }
 }
 
 /* TODO OPTIONAL - add a function mousePressed() that either stops or starts objects from moving
@@ -69,3 +91,54 @@ window.draw = draw;
 window.setup = setup;
 window.mousePressed = mousePressed;
 window.mouseReleased = mouseReleased;
+
+
+// function onMouse(evt: MouseEvent) {
+//     mouseY = evt.clientY;
+//     mouseX = evt.clientX;
+// }
+// function mousePressed() {
+//     for (let i = 0; i < balls.length; i++) {
+//         if (balls[i].touchingMouse()) {
+//             if (balls[i].isStopped()) {
+//                 balls[i].go();
+//             }
+//             else {
+//                 balls[i].stop();
+//             }
+//         }
+//     }
+// }
+// for (let i = 0; i < bubbles.length; i++) {
+//     if (bubbles[i}.touchingMouse()) {
+//     if (bubbles[i].isStopped()) {
+//         bubbles[i].go();
+//     }
+//     else {
+//         bubbles[i].stop();
+//     }
+// }
+//     }
+
+// for (let i = 0; 1 < snowflakes.lenght; i++) {
+//     if (snowflakes[i].touchingMouse()) {
+//         if (snowflakes[i].isStopped()) {
+//             snowflakes[i].go();
+//         }
+//         else {
+//             snowflakes[i].stop();
+//         }
+//     }
+// }
+// function mouseReleased() {
+
+// }
+
+// function random(min: number, max: number); number {
+//     return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+
+// function random_color(): string {
+//     let r: number = random(0, 200);
+//     let b: number = random(0, 200);
+//     let g: number = random(0, 200);

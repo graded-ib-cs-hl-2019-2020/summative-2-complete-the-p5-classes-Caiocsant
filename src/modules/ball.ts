@@ -9,8 +9,16 @@ export class Ball {
   private color: string = "red";
   private borderColor: string = "black";
 
-  /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
-  constructor(x: number, y: number, size: number) {
+  constructor(x: number, y: number, size: number, color: string = "red", borderColor: string = "black") {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.borderColor = borderColor
+    this.color = color;
+    this.xSpeed = this.xSpeed
+    this.ySpeed = this.ySpeed
+    this.stopped = this.stopped
+    /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
     /* TODO REQUIRED = Build your constructor */
     /* TODO OPTIONAL - add optional parameters to set color and borderColor on creation of the object */
   }
@@ -23,6 +31,9 @@ export class Ball {
     this.stopped = false;
   }
 
+  public isStopped(): boolean {
+    return this.stopped;
+  }
   public draw(): void {
     fill(this.color);
     stroke(this.borderColor);
